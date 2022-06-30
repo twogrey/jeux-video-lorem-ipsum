@@ -1,0 +1,106 @@
+h1,
+h2,
+h3 {
+	margin-bottom: var(--body-p);
+}
+
+h1 {
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 800;
+	font-size: clamp(1.75rem, 2vw + 1rem, 2.875rem);; // 28 -> 46
+	text-shadow: none;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+	background-image: linear-gradient(var(--color-primary-light), var(--color-secondary-light));
+	filter: drop-shadow(0.14em 0.14em 0.22em var(--color-secondary)) drop-shadow(-0.14em -0.14em 0.22em var(--color-primary));
+
+	svg {
+		width: var(--global-lh);
+		height: var(--global-lh);
+		vertical-align: bottom;
+	}
+
+	span {
+		display: inline-block;
+	} 
+}
+
+h2 {
+	font-size: clamp(1.25rem, 2vw + 0.5rem, 1.563rem); // 20 -> 25
+}
+
+.subtitle {
+	text-align: center;
+	font-weight: 500;
+	text-shadow: none;
+
+	&__content {
+		--square-size: 0.3em;
+		--square-offset: calc(var(--square-size) * 1.5);
+		--square-direction: 1;
+		--word-my: 0.5em;
+		margin: calc(var(--word-my) * -1);
+	}
+	
+	&__word {
+		--px: 1.25em;
+		position: relative;
+		display: block;
+		width: fit-content;
+		margin: var(--word-my) auto;
+		text-align: center;
+		font-weight: 800;
+		text-transform: uppercase;
+
+		@media (min-width: 40rem) {
+			display: inline-block;
+		}
+
+		&:nth-of-type(2) {
+			--square-direction: -1;
+		}
+
+		&::before,
+		&::after {
+			--s: 0.3em;
+			content: '';
+			position: absolute;
+			z-index: 1;
+			width: var(--square-size);
+			height: var(--square-size);
+			background-color: var(--bg-color);
+		}
+
+		&::before {
+			bottom: 0;
+			left: calc(var(--px) / 2);
+			box-shadow: calc(var(--square-offset) * var(--square-direction) * -1) var(--square-offset) 0 0 var(--color-primary);
+		}
+
+		&::after {
+			top: 0;
+			right: calc(var(--px) / 2);
+			box-shadow: calc(var(--square-offset) * var(--square-direction)) calc(var(--square-offset) * -1) 0 0 var(--color-secondary);
+		}
+
+		span {
+			display: block;
+			padding: 0.25em var(--px);
+			background-image: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+			clip-path: polygon(0 100%, calc(var(--px) / 2) 0, 100% 0, calc(100% - var(--px) / 2) 100%);
+		}
+	}
+
+	br {
+		display: none;
+
+		@media (min-width: 40rem) {
+			display: block;
+		}
+
+		@media (min-width: 64rem) {
+			display: none;
+		}
+	}
+}

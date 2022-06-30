@@ -1,0 +1,9 @@
+p {
+	&:where(:not(:last-child)) {
+		margin-bottom: 1em;
+	}
+
+	b {
+		font-weight: 700;
+	}
+}

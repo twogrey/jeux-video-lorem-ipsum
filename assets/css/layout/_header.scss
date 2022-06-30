@@ -1,0 +1,67 @@
+:root {
+	--intro-height: 15.25rem; 
+}
+
+.header {
+	--gap: 2rem;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	padding: calc(var(--gap) / 2) var(--gap);
+	border-top: 0.25rem solid var(--color-primary);
+	border-bottom: 1px solid var(--color-grey-light);
+	margin-bottom: calc(var(--intro-height) / 2 + var(--gap));
+	background-color: var(--color-primary-lightest);
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='199' viewBox='0 0 100 199'%3E%3Cg fill='%23ccbcdc' fill-opacity='0.4'%3E%3Cpath d='M0 199V0h1v1.99L100 199h-1.12L1 4.22V199H0zM100 2h-.12l-1-2H100v2z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E"); // https://heropatterns.com/
+	
+	[data-theme='dark'] & {
+		border-bottom-color: var(--color-primary-light);
+		background-color: var(--bg-color);
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='199' viewBox='0 0 100 199'%3E%3Cg fill='%23666666' fill-opacity='0.2'%3E%3Cpath d='M0 199V0h1v1.99L100 199h-1.12L1 4.22V199H0zM100 2h-.12l-1-2H100v2z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E"); // https://heropatterns.com/
+	}
+	
+	> * {
+		padding-top: calc(var(--gap) / 2);
+		padding-bottom: calc(var(--gap) / 2);
+	}
+	
+	&__title {
+		font-size: min(5vw, 2rem);
+		font-weight: 700;
+		color: var(--color-primary);
+		font-variant-caps: petite-caps;
+		
+		[data-theme='dark'] & {
+			color: var(--color-primary-light);
+		}
+	}
+	
+	&__aside {
+		justify-content: flex-end;
+		padding-left: var(--gap);
+		margin-left: auto;	
+	}
+	
+	&__intro {
+		order: 2;
+		max-width: var(--small-mw);
+		padding: var(--gap);
+		border: 1px solid var(--white);
+		margin: calc(var(--intro-height) / -2) auto 0;
+		border-radius: 0.25rem;
+		background-color: var(--white);
+		box-shadow: 0 1px 4px 0 rgb(0 0 0 / 10%);
+		transform: translateY(calc(var(--gap) / 2 + var(--intro-height) / 2));
+		
+		[data-theme='dark'] & {
+			border-color: var(--color-primary-light);
+			background-color: var(--color-primary-dark);
+		}
+	}
+	
+	&::after {
+		content: '';
+		order: 1;
+		width: 100%;	
+	}
+}

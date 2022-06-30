@@ -1,0 +1,21 @@
+nav {
+	--py: 0.4rem;
+	margin-top: calc(var(--py) * -1);
+	
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		list-style: none;
+	}
+	
+	a {
+		display: block;
+		padding: var(--py) 1rem;
+		font-size: 0.875rem;
+		font-weight: 700;
+		text-decoration: underline;
+	}
+}

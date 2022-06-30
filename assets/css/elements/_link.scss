@@ -1,0 +1,12 @@
+a {
+	p & {
+		text-decoration: underline;
+	}
+	
+	.external {
+		position: relative;
+		top: -0.5em;
+		font-size: 75%;
+		text-decoration: none;
+	}
+}

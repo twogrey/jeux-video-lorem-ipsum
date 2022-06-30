@@ -1,0 +1,44 @@
+.keys {
+	--o-b: 0.625rem;
+	position: relative;
+	z-index: 0;
+	display: flex;
+	gap: 0 1ch;
+	flex-wrap: wrap;
+	align-items: center;
+	padding-left: 0.3125rem;
+	margin-top: calc(var(--o-b) * -1);
+	
+	kbd {
+		// Inspired by https://www.cssscript.com/demo/keyboard-style-buttons/
+		--shadow-flat: #d9d9d9;
+		position: relative;
+		padding: 0.425rem 0.8rem;
+		border: 1px solid #e6e6e6;
+		margin: var(--o-b) 0;
+		border-radius: 0.25rem;
+		font-family: monospace;
+		font-size: 1rem;
+		background-color: var(--white);
+		color: #222;
+		box-shadow: 0 5px var(--shadow-flat), 2px 2.5px 4px #adb5bd, 0 -1px 2.5px rgb(173 181 189 / 25%);
+		
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: -0.3125rem;
+			bottom: calc(var(--o-b) * -1);
+			left: -0.3125rem;
+			z-index: -1;
+			border: 0.125rem solid #ccc;
+			border-radius: 0.5rem;
+			background-color: inherit;
+			pointer-events: none;
+			
+			[data-theme='dark'] & {
+				background-color: #939393;
+			}
+		}
+	}
+}

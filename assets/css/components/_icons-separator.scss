@@ -1,0 +1,13 @@
+.icons-sep {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 1rem 0;
+
+	svg {
+		width: 3em;
+		height: 3em;
+		margin: 0 0.5rem;
+		opacity: 0.25;
+	}
+}

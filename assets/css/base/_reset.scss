@@ -1,0 +1,49 @@
+*:where(:not(iframe, canvas, img, svg, video, input, select, ul, ol, details, summary):not(svg *, symbol *)) {
+	all: unset;
+	display: revert;
+}
+
+:root {
+	--global-lh: calc(1em + 0.25rem);
+}
+
+*,
+*::before,
+*::after {
+	line-height: var(--global-lh);
+}
+
+a,
+button {
+	cursor: pointer;
+
+	&:hover {
+		color: var(--color-primary);
+		outline: 2px dashed currentColor;
+		outline-offset: 0.2rem;
+
+		[data-theme='dark'] & {
+			color: inherit;
+		}
+	}
+}
+
+svg {
+	fill: none;
+	stroke: currentColor;
+	stroke-width: 1.5;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+/** --------------------------------------------
+ * 
+ * Box sizing
+ * 
+ -------------------------------------------- */
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
