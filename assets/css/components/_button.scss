@@ -1,3 +1,27 @@
 .btn {
-	
+	position: relative;
+	padding: 0.5em 1em;
+	border-radius: 100em;
+  box-shadow: 0 2px 6px 0 rgb(0 0 0 / 60%), 0 3px 0 4px var(--color-primary-dark), inset 0 1px 0 0 rgba(#fff, .5);
+  background-image: linear-gradient(to bottom, var(--color-primary-light), var(--color-primary));
+  color: #fff;
+  font-weight: 900;
+	text-transform: uppercase;
+	text-shadow: none;
+
+	&:hover {
+		outline: none;
+	}
+
+	&:hover,
+	&:focus-visible {
+  	color: #fff;
+		background-image: none;
+		background-color: var(--color-primary);
+	}
+
+	&:active {
+		transform: translateY(3px);
+		box-shadow: inset 0 0 3px 0 rgb(0 0 0 / 40%), 0 0 0 4px var(--color-primary-dark)
+	}
 }
