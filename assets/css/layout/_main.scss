@@ -16,7 +16,7 @@
     bottom: 0;
     left: 0;
     filter: blur(10px);
-    background-image: linear-gradient(45deg, var(--color-primary-light), var(--color-secondary-light));
+    background-image: linear-gradient(to top right, var(--color-primary-light), var(--color-secondary-light));
 	}
 
 	&__content {

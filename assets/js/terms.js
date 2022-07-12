@@ -548,6 +548,8 @@ const terms = {
 		"rodeur",
 		"archer",
 		"alchimiste",
+		"forgeron",
+		"armurier",
 		"pirate",
 		"pilote"
 	],
@@ -643,6 +645,7 @@ const terms = {
 		"l'Epée broyante",
 		"la keyblade",
 		"la master sword",
+		"le portal gun",
 		"le golden gun",
 		"la carapace bleue",
 		"une gunblade",
@@ -694,7 +697,8 @@ const terms = {
 		"baguettes",
 		"capes",
 		"casques",
-		"ceinturons"
+		"ceinturons",
+		"flèches"
 	],
 	magicItem: [
 		"la Hache du Centaure",

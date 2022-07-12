@@ -13,6 +13,7 @@ html {
 	color: var(--text-color);
 	background: radial-gradient(rgba(var(--color-primary-dark-rgb), 0.625) 0, transparent 70%), linear-gradient(var(--bg-color) 40%, var(--color-secondary-dark) 70%);
 	background-color: var(--bg-color);
+	background-attachment: fixed;
 }
 
 /** --------------------------------------------
