@@ -204,7 +204,7 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('lint:css', [ 'shell:lint' ]);
 
-	grunt.registerTask('build:css', [ 'sass', 'postcss', 'shell:lint' ]);
+	grunt.registerTask('build:css', [ 'sass', 'postcss' ]);
 
 	grunt.registerTask('build:js', [ 'jshint', 'babel', 'uglify' ]);
 

@@ -20,6 +20,11 @@ h1 {
 	filter: drop-shadow(0.14em 0.14em 0.22em var(--color-secondary)) drop-shadow(-0.14em -0.14em 0.22em var(--color-primary));
 
 	@media (min-width: 40rem) {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+
 		&::after { 
 			content: '';
 	    position: absolute;
@@ -48,7 +53,11 @@ h1 {
 
 	span {
 		display: inline-block;
-	} 
+
+		@media (min-width: 40rem) {
+			display: inline;
+		}
+	}
 }
 
 h2 {
