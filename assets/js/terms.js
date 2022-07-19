@@ -64,7 +64,7 @@ const terms = {
 		"Furi",
 		"Dust : An elysian tail",
 		"Hollow Knight",
-		"Ori and the Blind Forest",
+		"Ori",
 		"Celeste",
 		"Baba is You",
 		"Luigi's Mansion",

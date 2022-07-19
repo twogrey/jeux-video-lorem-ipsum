@@ -75,10 +75,10 @@ h2 {
 	}
 	
 	&__word {
-		--skewY: calc(var(--px) / 2);
-		--hole-offset: calc(var(--px) / 2);
-		--hole-size: 0.4em;
 		--px: 1.25em;
+		--skewY: calc(var(--px) / 2);
+		--hole-offset: var(--skewY);
+		--hole-size: 0.4em;
 		position: relative;
 		display: block;
 		width: fit-content;
@@ -151,6 +151,46 @@ h2 {
 				}
 			}
 		}
+
+		&:nth-of-type(2) {
+			@media (min-width: 64rem) and (prefers-reduced-motion: no-preference) {
+				--bx-1: 15%;
+				--bx-2: 32%;
+				--bx-3: 65%;
+				--s: 0.25em;
+				--rect-y: calc(100% + 1em);
+				--rect-w: 1em;
+				--rect-h: 0.25em;
+				--ball-s: 0.25em;
+				--dur: 3s;
+
+				&::before {
+					content: '';
+					position: absolute;
+					top: var(--rect-y);
+					left: 0;
+					width: 1em;
+					height: var(--rect-h);
+					background-image: linear-gradient(45deg, var(--color-secondary), var(--color-primary));
+					animation: wallbreaker-rect var(--dur) infinite cubic-bezier(.67,1,.5,-0.3);
+				}
+
+				&::after {
+					content: '';
+					position: absolute;
+					left: calc(var(--rect-w) / 2 - var(--ball-s) / 2);
+					width: var(--ball-s);
+					height: var(--ball-s);
+					border-radius: 50%;
+					background-color: #9e9e9e;
+					animation: wallbreaker-rect var(--dur) infinite linear, wallbreaker-ball var(--dur) infinite linear;
+				}
+
+				span {	
+					animation: wallbreaker var(--dur) steps(9) infinite;
+				}
+			}
+		}
 	}
 
 	br {
@@ -217,20 +257,83 @@ h2 {
 	}
 }
 
-@keyframes portal-fade {
-	// 0% {
-	// 	opacity: 0;
-	// }
-	// 25% {
-	// 	opacity: 1;
-	// }
-	// 50% {
-	// 	opacity: 0;
-	// }
-	// 75% {
-	// 	opacity: 1;
-	// }
-	// 100% {
-	// 	opacity: 0;
-	// }
+@keyframes wallbreaker-rect {
+	to {
+		left: 100%;
+	}
+}
+
+@keyframes wallbreaker-ball {
+	0% {
+		top: calc(var(--rect-y) - var(--ball-s));
+	}
+	10% {
+		top: 100%;
+	}
+	22% {
+		top: calc(var(--rect-y) - var(--ball-s));
+	}
+	28% {
+		top: 100%;
+	}
+	50% {
+		top: calc(var(--rect-y) - var(--ball-s));
+	}
+	62% {
+		top: 100%;
+	}
+	100% {
+		top: calc(var(--rect-y) - var(--ball-s));
+	}
+}
+
+@keyframes wallbreaker {
+	20% {
+		clip-path: polygon(
+			calc(100% - var(--skewY)) 100%,
+			100% 0%,
+			var(--skewY) 0%,
+			0% 100%,
+			var(--bx-1) 100%,
+			var(--bx-1) calc(100% - var(--s)),
+			calc(var(--bx-1) + var(--s)) calc(100% - var(--s)),
+			calc(var(--bx-1) + var(--s)) 100%
+		);
+	}
+	35% {
+		clip-path: polygon(
+			calc(100% - var(--skewY)) 100%,
+			100% 0%,
+			var(--skewY) 0%,
+			0% 100%,
+			var(--bx-1) 100%,
+			var(--bx-1) calc(100% - var(--s)),
+			calc(var(--bx-1) + var(--s)) calc(100% - var(--s)),
+			calc(var(--bx-1) + var(--s)) 100%,
+			var(--bx-2) 100%,
+			var(--bx-2) calc(100% - var(--s)),
+			calc(var(--bx-2) + var(--s)) calc(100% - var(--s)),
+			calc(var(--bx-2) + var(--s)) 100%
+		);
+	}
+	85% {
+		clip-path: polygon(
+			calc(100% - var(--skewY)) 100%,
+			100% 0%,
+			var(--skewY) 0%,
+			0% 100%,
+			var(--bx-1) 100%,
+			var(--bx-1) calc(100% - var(--s)),
+			calc(var(--bx-1) + var(--s)) calc(100% - var(--s)),
+			calc(var(--bx-1) + var(--s)) 100%,
+			var(--bx-2) 100%,
+			var(--bx-2) calc(100% - var(--s)),
+			calc(var(--bx-2) + var(--s)) calc(100% - var(--s)),
+			calc(var(--bx-2) + var(--s)) 100%,
+			var(--bx-3) 100%,
+			var(--bx-3) calc(100% - var(--s)),
+			calc(var(--bx-3) + var(--s)) calc(100% - var(--s)),
+			calc(var(--bx-3) + var(--s)) 100%
+		);
+	}
 }
