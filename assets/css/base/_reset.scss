@@ -18,13 +18,14 @@ button {
 	cursor: pointer;
 
 	&:hover {
-		color: var(--color-primary);
 		outline: 2px dashed currentColor;
 		outline-offset: 0.2rem;
+	}
+}
 
-		[data-theme='dark'] & {
-			color: inherit;
-		}
+a {
+	&:where(:not(.btn)):hover {
+		color: var(--color-primary);
 	}
 }
 

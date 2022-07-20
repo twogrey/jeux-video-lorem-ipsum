@@ -337,7 +337,7 @@ const terms = {
 	],
 	console1: [
 		"PSP",
-		"Ps Vita",
+		"PS Vita",
 		"Commodore 64",
 		"borne d'arcade",
 		"PC-Engine",

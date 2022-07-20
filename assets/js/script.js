@@ -41,3 +41,9 @@ generateText(document.getElementById('paragraphes-number').value);
 document.getElementById('generate').addEventListener('click', () => {
 	generateText(document.getElementById('paragraphes-number').value);
 });
+
+document.querySelectorAll('.js-copy').forEach(function(btn) {
+		btn.addEventListener('click', function() {
+			console.log(document.querySelector(this.getAttribute('data-target')).textContent.replace(/^\s+/mg, "").replace(new RegExp('\r?\n','g'), '\n\n'));
+		});
+	});

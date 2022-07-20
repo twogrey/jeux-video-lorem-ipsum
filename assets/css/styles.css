@@ -38,13 +38,12 @@ button {
 }
 a:hover,
 button:hover {
-  color: var(--color-primary);
   outline: 2px dashed currentColor;
   outline-offset: 0.2rem;
 }
-[data-theme=dark] a:hover,
-[data-theme=dark] button:hover {
-  color: inherit;
+
+a:where(:not(.btn)):hover {
+  color: var(--color-primary);
 }
 
 svg {
@@ -438,27 +437,34 @@ h2 {
   }
 }
 .btn {
+  --bg-start: var(--color-primary-light);
+  --bg-end: var(--color-primary);
+  --bg: linear-gradient(to bottom, var(--bg-start), var(--bg-end));
+  --shadow: var(--color-primary-dark);
   position: relative;
   padding: 0.5em 1em;
   border-radius: 100em;
-  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.6), 0 3px 0 4px var(--color-primary-dark), inset 0 1px 0 0 rgba(255, 255, 255, 0.5);
-  background-image: linear-gradient(to bottom, var(--color-primary-light), var(--color-primary));
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.6), 0 3px 0 4px var(--shadow), inset 0 1px 0 0 rgba(255, 255, 255, 0.5);
+  background: var(--bg);
   color: #fff;
   font-weight: 900;
   text-transform: uppercase;
   text-shadow: none;
 }
+.btn--grey {
+  --bg-start: #6f7371;
+  --bg-end: #54585a;
+  --shadow: #2f3132;
+}
 .btn:hover {
   outline: none;
 }
 .btn:hover, .btn:focus-visible {
-  color: #fff;
-  background-image: none;
-  background-color: var(--color-primary);
+  --bg: var(--bg-end);
 }
 .btn:active {
   transform: translateY(3px);
-  box-shadow: inset 0 0 3px 0 rgba(0, 0, 0, 0.4), 0 0 0 4px var(--color-primary-dark);
+  box-shadow: inset 0 0 3px 0 rgba(0, 0, 0, 0.4), 0 0 0 4px var(--shadow);
 }
 
 .grid {
