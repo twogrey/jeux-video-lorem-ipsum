@@ -1,6 +1,8 @@
 p {
-	&:where(:not(:last-child)) {
-		margin-bottom: 1em;
+	margin-bottom: 0;
+
+	&:where(:not(:first-child)) {
+		margin-top: 1em;
 	}
 
 	b {

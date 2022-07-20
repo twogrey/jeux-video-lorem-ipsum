@@ -1,0 +1,35 @@
+.tabs {
+	[role="tablist"] {
+		display: flex;
+		justify-content: center;
+		gap: 1rem;
+		margin-bottom: 2rem;
+	}
+
+	[role="tab"] {
+		text-transform: uppercase;
+		font-weight: 900;
+		outline-color: var(--color-primary);
+
+		&[aria-selected="false"] {
+			text-shadow: none;
+		}
+
+		&[aria-selected="true"] {
+			text-decoration-line: underline;
+			text-decoration-color: var(--color-secondary-light);
+			text-decoration-thickness: 0.25em;
+			text-underline-offset: 0.25em;
+		}
+	}
+
+	[role="tabpanel"] {
+		flex-direction: column;
+		align-items: center;
+		gap: 1.5rem;
+
+		&:not(.is-hidden) {
+			display: flex;
+		}
+	}
+}
