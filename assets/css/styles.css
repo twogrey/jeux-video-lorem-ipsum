@@ -486,6 +486,11 @@ h2 {
   width: 140px;
   height: 140px;
 }
+@supports (background: -webkit-named-image(i)) {
+  .neon-icon {
+    display: none;
+  }
+}
 
 .tabs [role=tablist] {
   display: flex;
