@@ -1,0 +1,30 @@
+.main {
+	--rad: 1rem;
+	--p: .2rem;
+	position: relative;
+	z-index: 0;
+	max-width: 40rem;
+	padding: var(--p);
+	margin: auto;
+	border-radius: var(--rad);
+	background-image: linear-gradient(45deg, var(--color-primary), var(--color-secondary));	
+
+	&::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    filter: blur(10px);
+    background-image: linear-gradient(to top right, var(--color-primary-light), var(--color-secondary-light));
+	}
+
+	&__content {
+		padding: 2rem;
+		border-radius: calc(var(--rad) - var(--p));
+		background-color: var(--bg-color);
+		box-shadow: inset 0.625rem -0.625rem 1.25rem -0.625rem var(--color-primary-light), inset -0.625rem 0.625rem 1.25rem -0.625rem  var(--color-secondary-light);
+	}
+}

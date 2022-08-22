@@ -1,0 +1,104 @@
+/** --------------------------------------------
+ * 
+ * Base styles for <html>
+ * 
+ -------------------------------------------- */
+
+html {
+	height: 100%;
+	box-sizing: border-box;
+	font-family: 'Exo', monospace;
+	font-size: 100%;
+	font-weight: 500;
+	color: var(--text-color);
+	background: radial-gradient(rgba(var(--color-primary-dark-rgb), 0.625) 0, transparent 70%), linear-gradient(var(--bg-color) 40%, var(--color-secondary-dark) 70%);
+	background-color: var(--bg-color);
+	background-attachment: fixed;
+}
+
+/** --------------------------------------------
+ * 
+ * Base styles for <body>
+ * 
+ -------------------------------------------- */
+
+body {
+	min-height: 100%;
+	text-rendering: optimizeSpeed;
+	text-shadow: 0 0 0.25em rgb(200 200 200);
+	line-height: 1.25;
+	max-width: 90rem;
+	margin: 0 auto;
+	padding: var(--body-p);
+}
+
+/** --------------------------------------------
+ * 
+ * Apply outline only for keyboard users (and when browser considers user need it)
+ * 
+ -------------------------------------------- */
+
+:focus:not(:focus-visible) {
+	outline: 0;
+}
+
+:focus-visible {
+	outline-style: auto;
+}
+
+/** --------------------------------------------
+ * 
+ * Screen reader only CSS class (https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034)
+ * 
+ -------------------------------------------- */
+
+.sr-only {
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	padding: 0 !important;
+	border: 0 !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	clip: rect(1px, 1px, 1px, 1px) !important;
+	white-space: nowrap !important;
+	clip-path: inset(50%) !important;
+	clip-path: inset(50%) !important;
+}
+
+/** --------------------------------------------
+ * 
+ * Indicates that user has notified the system that they prefer an interface that removes or replaces the types of motion-based animation that trigger discomfort.
+ * 
+ -------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	::before,
+	::after {
+		transition-duration: 0.001ms !important;
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+	}
+}
+
+/** --------------------------------------------
+ * 
+ * Applies styles to the part of a document that has been highlighted by the user
+ * 
+ -------------------------------------------- */
+
+::selection {
+	color: #fff;
+	background-color: var(--color-primary)
+}
+
+/** --------------------------------------------
+ * 
+ * 
+ * 
+ -------------------------------------------- */
+
+ .is-hidden {
+ 	display: none;
+ }

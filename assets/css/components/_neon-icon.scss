@@ -1,0 +1,127 @@
+:root {
+	--neon-icon-s: 8.75rem;
+}
+
+.neon-icon {
+	stroke-width: 1;
+	width: var(--neon-icon-s);
+	height: var(--neon-icon-s);
+	pointer-events: none;
+
+	@media (min-width: 64rem) {
+		position: absolute;
+	}
+
+	[style*="color"] { 
+	    filter: 
+	        drop-shadow(0px 0px 2px currentColor) 
+	        drop-shadow(0px 0px 2px currentColor) 
+	        drop-shadow(0px 0px 4px currentColor);
+	}
+}
+
+.neon-icons { 
+	position: absolute;
+	z-index: -1;
+	top: calc(100% + 1rem);
+	left: 0;
+	right: 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	@media (min-width: 64rem) {
+		top: 0;
+		bottom: 0;
+
+		:nth-child(odd) {
+			left: calc(100% + 1rem);
+		}
+
+		:nth-child(even) {
+			right: calc(100% + 1rem);
+		}
+
+		:nth-child(1),
+		:nth-child(2) {
+			top: 0;
+		}
+
+		:nth-child(3),
+		:nth-child(4) {
+			top: calc(50% - var(--neon-icon-s) / 2);
+		}
+
+		:nth-child(5),
+		:nth-child(6) {
+			bottom: 0;
+		}
+	}
+
+	@supports (background: -webkit-named-image(i)) {
+	  display: none;
+	}
+}
+
+#icon-megaman .diode {
+    --dur: 1.5s;
+    animation: megaman var(--dur) infinite steps(2);
+}
+
+#icon-megaman .diode--2 {
+    animation-delay: calc(var(--dur) * 0.25);
+}
+
+@keyframes megaman {
+    to {
+        filter: none;
+    }
+}
+
+#icon-samus .visor {
+    animation: fadeOut 1.5s infinite alternate ease-in;
+}
+
+#icon-triforce .disc {
+    --dur: 3s;
+    fill: currentColor;
+    stroke: none;
+    offset-path: path('M122.7 116.3H27.5L75 33.9z');
+    animation: triforce var(--dur) infinite cubic-bezier(.5,1.5,.5,-0.5);
+}
+
+#icon-triforce .disc--2 {
+    animation-delay: calc(var(--dur) / -2);
+    offset-path: path('M99 75H51M51 75l24 41M75 116l24-41');
+}
+
+@keyframes triforce {
+    to {
+        offset-distance: 100%;
+    }
+}
+
+#icon-pokeball {
+    animation: pokeball 3.5s cubic-bezier(.4,.1,.2,1) infinite;
+}
+
+#icon-pokeball .disc {
+    stroke: none;
+    fill: currentColor;
+    animation: fadeOut 1s cubic-bezier(.5,2,0,-0.5) alternate infinite;
+}
+
+@keyframes pokeball {
+    0% { transform: none; }
+    10% { transform: translate(-0.25rem, 0) rotate(-15deg); }
+    15% { transform: translate(0.25rem, 0) rotate(15deg); }
+    25% { transform: translate(-0.25rem, 0) rotate(-5deg); }
+    30% { transform: translate(0.25rem, 0) rotate(5deg); }
+    50%, 100% { transform: none; }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}

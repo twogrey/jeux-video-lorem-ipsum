@@ -1,0 +1,39 @@
+.grid {
+	perspective: 700px;
+	position: fixed;
+	bottom: -120vh;
+	left: 50%;
+	width: 300vw;
+	height: 300vh;
+	z-index: -1;
+	pointer-events: none;
+	transform: translateX(-50%);
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: 
+			linear-gradient(transparent 65%, rgba(var(--color-secondary-rgb), .4) 75%, var(--color-secondary) 80%, rgba(var(--color-secondary-rgb), .4) 85%, transparent 95%),
+			linear-gradient(90deg,transparent 65%, rgba(var(--color-secondary-rgb),.4) 75%, var(--color-secondary) 80%, rgba(var(--color-secondary-rgb), .4) 85%, transparent 95%);
+		background-size: 30px 30px;
+		mask-image: linear-gradient(black, rgba(0, 0, 0, 0) 80%);
+		transform: rotateX(-100deg);
+
+    @media (min-width: 48rem) and (prefers-reduced-motion: no-preference) {
+   		animation: grid 180s linear infinite;
+    }
+	}
+}
+
+@keyframes grid {
+	from {
+		background-position: bottom center;
+	}
+	to {
+		background-position: top center;
+	}
+}

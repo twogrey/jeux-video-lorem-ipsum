@@ -1,0 +1,50 @@
+.dialog {
+	--x: 1.5rem;
+	left: var(--x);
+	right: var(--x);
+	max-width: 60rem;
+	width: calc(100vw - (var(--x) * 2));
+	padding: 2rem;
+	text-shadow: none;
+	overscroll-behavior: contain;
+
+	&::backdrop {
+		background-color: rgba(#000, 0.5);
+	}
+
+	&__head {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 1rem;
+		padding-bottom: 1.5rem;
+		border-bottom: 0.0625rem solid rgba(0, 0, 0, 0.2);
+		margin-bottom: 1.5rem;
+
+		button {
+			margin-left: auto;
+		}
+	}
+
+	&__title {
+		font-weight: 900;
+		text-transform: uppercase;
+		color: var(--color-primary);
+		margin: 0;
+	}
+
+	h3 {
+		color: var(--color-primary);
+	}
+
+	h3, h4 {
+		font-weight: 900;
+		margin: 1em 0;
+	}
+
+	.support {
+		display: block;
+		width: fit-content;
+		margin: 0 auto;
+	}
+}

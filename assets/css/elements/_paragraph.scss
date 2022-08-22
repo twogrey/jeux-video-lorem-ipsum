@@ -1,0 +1,11 @@
+p {
+	margin-bottom: 0;
+
+	&:where(:not(:first-child)) {
+		margin-top: 1em;
+	}
+
+	b {
+		font-weight: 700;
+	}
+}

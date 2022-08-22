@@ -1,0 +1,16 @@
+.options {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 2rem;
+
+	select {
+		min-width: 4rem;
+		height: 2em;
+		font-size: 1rem;
+		-webkit-appearance: menulist-button;
+		accent-color: var(--color-primary);
+	}
+}
