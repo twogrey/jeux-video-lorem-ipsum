@@ -731,9 +731,11 @@ h3 {
   mask-image: linear-gradient(black, rgba(0, 0, 0, 0) 80%);
   transform: rotateX(-100deg);
 }
-@media (min-width: 48rem) and (prefers-reduced-motion: no-preference) {
-  .grid::after {
-    animation: grid 180s linear infinite;
+@supports not selector(div::target-text) {
+  @media (min-width: 48rem) and (prefers-reduced-motion: no-preference) {
+    .grid::after {
+      animation: grid 181s linear infinite;
+    }
   }
 }
 

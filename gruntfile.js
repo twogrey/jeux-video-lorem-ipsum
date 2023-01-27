@@ -36,7 +36,7 @@ module.exports = function (grunt) {
 			},
 			options: {
 				watchTask: true,
-				proxy: 'http://localhost/videorem-gamipsum/',
+				proxy: 'http://localhost/jeux-video-lorem-ipsum/',
 			},
 		},
 		/**
